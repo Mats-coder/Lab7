@@ -64,6 +64,10 @@ public class GraphicalCR extends JFrame {
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
+                    dicePanel.repaint();
+                    dicePanel.revalidate();
+                    gameStatus.repaint();
+                    gameStatus.revalidate();
                     currentPlayer +=1;
                     current.setText("Next Player is "+lcr.players[currentPlayer].name);
                     gameStatus.add(current);
@@ -79,6 +83,10 @@ public class GraphicalCR extends JFrame {
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
+                    dicePanel.repaint();
+                    dicePanel.revalidate();
+                    gameStatus.repaint();
+                    gameStatus.revalidate();
                     currentPlayer+=1;
                     current.setText("Next Player is "+lcr.players[currentPlayer].name);
                     gameStatus.add(current);
@@ -93,12 +101,22 @@ public class GraphicalCR extends JFrame {
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
+                    dicePanel.repaint();
+                    dicePanel.revalidate();
+                    gameStatus.repaint();
+                    gameStatus.revalidate();
                     currentPlayer=0;
                     current.setText("Next Player is "+lcr.players[currentPlayer].name);
                     gameStatus.add(current);
                 }
                 }
 
+        });
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
         });
 
 
