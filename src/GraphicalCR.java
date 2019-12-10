@@ -33,13 +33,11 @@ public class GraphicalCR extends JFrame {
             dicePanel.add(dice,d);
         }
 
-        /*
-        JLabel dice1 = new JLabel(lcr.dice[0].thisSideUp);
-        JLabel dice2 = new JLabel(lcr.dice[1].thisSideUp);
-        JLabel dice3 = new JLabel(lcr.dice[2].thisSideUp);
-        dicePanel.add(dice1);
-        dicePanel.add(dice2);
-        dicePanel.add(dice3);*/
+        JPanel gameStatus = new JPanel();
+        mainPanel.add(gameStatus);
+        JLabel current = new JLabel("Next Player is "+lcr.players[currentPlayer].name);
+        gameStatus.add(current);
+
 
 
         JPanel buttonsPanel = new JPanel();
@@ -48,8 +46,6 @@ public class GraphicalCR extends JFrame {
         JButton exit = new JButton("Exit");
         buttonsPanel.add(nextRound);
         buttonsPanel.add(exit);
-        nextRound.setActionCommand("r");
-        exit.setActionCommand("q");
         nextRound.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,11 +55,14 @@ public class GraphicalCR extends JFrame {
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
                     dicePanel.removeAll();
+                    gameStatus.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
                     currentPlayer +=1;
+                    current.setText("Next Player is "+lcr.players[currentPlayer].name);
+                    gameStatus.add(current);
 
                 }else if(currentPlayer == 1){
                     lcr.playTurn(currentPlayer);
@@ -71,26 +70,35 @@ public class GraphicalCR extends JFrame {
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
                     dicePanel.removeAll();
+                    gameStatus.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
                     currentPlayer+=1;
+                    current.setText("Next Player is "+lcr.players[currentPlayer].name);
+                    gameStatus.add(current);
                 } else {
                     lcr.playTurn(currentPlayer);
                     player1.setText(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
                     dicePanel.removeAll();
+                    gameStatus.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
                         dicePanel.add(dice);
                     }
                     currentPlayer=0;
+                    current.setText("Next Player is "+lcr.players[currentPlayer].name);
+                    gameStatus.add(current);
                 }
                 }
 
         });
+
+
+
 
 
     }
