@@ -58,10 +58,10 @@ public class GraphicalCR extends JFrame {
                     player1.setText(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
+                    dicePanel.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
-                        dicePanel.remove(d);
-                        dicePanel.add(dice,d);
+                        dicePanel.add(dice);
                     }
                     currentPlayer +=1;
 
@@ -70,10 +70,10 @@ public class GraphicalCR extends JFrame {
                     player1.setText(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
+                    dicePanel.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
-                        dicePanel.remove(d);
-                        dicePanel.add(dice,d);
+                        dicePanel.add(dice);
                     }
                     currentPlayer+=1;
                 } else {
@@ -81,10 +81,10 @@ public class GraphicalCR extends JFrame {
                     player1.setText(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
                     player2.setText(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
                     player3.setText(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
+                    dicePanel.removeAll();
                     for (int d = 0; d < lcr.previousChips&& d < 3; d++){
                         JLabel dice = new JLabel(lcr.dice[d].thisSideUp);
-                        dicePanel.remove(d);
-                        dicePanel.add(dice,d);
+                        dicePanel.add(dice);
                     }
                     currentPlayer=0;
                 }
