@@ -19,9 +19,13 @@ public class GraphicalCR extends JFrame {
         JPanel playersPanel = new JPanel();
         mainPanel.add(playersPanel);
         playersPanel.setLayout(new FlowLayout());
+        playersPanel.setBorder(BorderFactory.createTitledBorder("Players"));
         JLabel player1 = new JLabel(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
         JLabel player2 = new JLabel(lcr.players[1].name+" ("+lcr.players[1].chips+" chips)");
         JLabel player3 = new JLabel(lcr.players[2].name+" ("+lcr.players[2].chips+" chips)");
+        player1.setBorder(BorderFactory.createEtchedBorder());
+        player2.setBorder(BorderFactory.createEtchedBorder());
+        player3.setBorder(BorderFactory.createEtchedBorder());
         playersPanel.add(player1);
         playersPanel.add(player2);
         playersPanel.add(player3);
