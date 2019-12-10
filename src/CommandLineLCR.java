@@ -15,7 +15,9 @@ public class CommandLineLCR {
     // I.e. instantiate objects and test
     // Later just comment out (don't erase the test code!)
     LCRGame lcr = new LCRGame("Anna", "Benny", "Gunnar");
+    lcr.playTurn(0);
     GraphicalCR GraphicalLCR = new GraphicalCR(lcr);
+
 
 
 
