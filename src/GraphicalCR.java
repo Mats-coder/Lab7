@@ -53,6 +53,7 @@ public class GraphicalCR extends JFrame {
         nextRound.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (lcr.checkForWinner() == false){
                 if(currentPlayer == 0){
                     lcr.playTurn(currentPlayer);
                     player1.setText(lcr.players[0].name+" ("+lcr.players[0].chips+" chips)");
@@ -109,7 +110,15 @@ public class GraphicalCR extends JFrame {
                     current.setText("Next Player is "+lcr.players[currentPlayer].name);
                     gameStatus.add(current);
                 }
+                } else {
+                    gameStatus.removeAll();
+                    current.setText("The winner is "+lcr.getWinner()+"!");
+                    gameStatus.add(current);
+                    gameStatus.repaint();
+                    gameStatus.revalidate();
+                    nextRound.setEnabled(false);
                 }
+            }
 
         });
         exit.addActionListener(new ActionListener() {
